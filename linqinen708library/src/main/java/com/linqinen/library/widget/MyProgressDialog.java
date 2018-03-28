@@ -11,6 +11,7 @@ import com.linqinen.library.R;
 
 /**
  * Created by 林 on 2017/6/7.
+ * 自己创建的简单的进度条的dialog
  */
 
 public class MyProgressDialog extends Dialog {

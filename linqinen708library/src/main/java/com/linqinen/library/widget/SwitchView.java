@@ -20,7 +20,7 @@ import android.view.animation.AccelerateInterpolator;
 
 import com.linqinen.library.R;
 
-
+/**仿ios的开关*/
 public class SwitchView extends View {
     private final int DEFAULT_COLOR_PRIMARY = 0xFFe05a17;
     private final int DEFAULT_COLOR_PRIMARY_DARK = 0xFFD6D6D6;

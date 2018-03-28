@@ -32,29 +32,29 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         mFragmentList.remove(fragment);
         mFragmentTitleList.remove(title);
     }
+
     public void removeFragment(int index) {
         mFragmentList.remove(index);
         mFragmentTitleList.remove(index);
     }
 
-    public void set(int index,Fragment fragment, String title){
-        mFragmentList.set(index,fragment );
-        mFragmentTitleList.set(index,title);
+    public void set(int index, Fragment fragment, String title) {
+        mFragmentList.set(index, fragment);
+        mFragmentTitleList.set(index, title);
     }
 
-    /**在直接调用addFragment可以成功的添加Fragment。但是调用remove方法并不能移除fragment。
+    /**
+     * 在直接调用addFragment可以成功的添加Fragment。但是调用remove方法并不能移除fragment。
      * viewpager调用setAdapter时会首先执行instantiateItem(ViewGroup container,
      * int position)寻找是否添加过，如果添加过会直接使用，没添加过会执行getItem(int position)。
      * 所以当我们仅仅移除列表中的Fragment没生效，因为在adapter已经记录了fragment。
-     *
+     * <p>
      * 所以我们重写getItemId(int position)方法，根据fragment的id来查找。
-     * */
+     */
     @Override
     public long getItemId(int position) {
         // 获取当前数据的hashCode
-        int hashCode = mFragmentList.get(position).hashCode();
-//        LogT.i("hashCode:" + hashCode);
-        return hashCode;
+        return mFragmentList.get(position).hashCode();
     }
 
     @Override
@@ -88,7 +88,10 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mFragmentTitleList.get(position);
+        if (mFragmentTitleList.size() > position) {
+            return mFragmentTitleList.get(position);
+        }
+        return null;
     }
 
 

@@ -7,6 +7,10 @@ import com.linqinen.library.widget.flowerdialog.FlowerDialog;
 
 /**
  * Created by 林 on 2017/4/11 0011.
+ *
+ * 菊花进度条，仿ios的progressDialog，如果只是在一个activity中一次性使用还可以
+ *
+ * 如果需要重复使用，会出现bug
  */
 
 public class MyFlowerDialog {

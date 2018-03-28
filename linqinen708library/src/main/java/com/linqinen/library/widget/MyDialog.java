@@ -17,6 +17,10 @@ import com.linqinen.library.utils.LogT;
 
 /**
  * Created by 林 on 2017/5/2.
+ *
+ * 比如钱悦贷中的提示新版本升级dialog用的就是这种
+ *
+ * 属于ios风格
  */
 
 public class MyDialog extends Dialog {

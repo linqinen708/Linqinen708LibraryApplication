@@ -8,6 +8,10 @@ import java.lang.reflect.Field;
 
 /**
  * Created by 林 on 2018/3/8.
+ * 这个类主要用于通过图片名称，直接使用R.drawable下的图片
+ *
+ * 使用案例：
+ * imageView.setImageResource(MyUtils.getResId(imageName, R.drawable.class));
  */
 
 public class MyUtils {

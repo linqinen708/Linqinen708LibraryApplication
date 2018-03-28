@@ -1,8 +1,6 @@
 package com.linqinen.library.widget;
 
-/**
- * Created by 林 on 2017/5/19.
- */
+
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -25,7 +23,11 @@ import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 
 import com.linqinen.library.R;
-
+/**
+ * Created by 林 on 2017/5/19.
+ *
+ * 圆形图片头像,原地址compile 'de.hdodenhof:circleimageview:2.1.0'
+ */
 public class CircleImageView extends android.support.v7.widget.AppCompatImageView {
 
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;

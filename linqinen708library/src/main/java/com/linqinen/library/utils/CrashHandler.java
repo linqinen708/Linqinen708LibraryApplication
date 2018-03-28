@@ -24,8 +24,12 @@ import java.util.Map;
 
 /**
  * UncaughtException处理类,当程序发生Uncaught异常的时候,有该类来接管程序,并记录发送错误报告.
- *
- * @author user
+ * <p>
+ * 自定义崩溃CrashHandler，保存崩溃日志
+ * 使用方式：
+ * 在Application类中的onCreate方法中，直接使用
+ * CrashHandler crashCatchHandler = CrashHandler.getInstance();//获得单例
+ * crashCatchHandler.init(getApplicationContext());//初始化,传入context
  */
 public class CrashHandler implements UncaughtExceptionHandler {
 
@@ -91,11 +95,11 @@ public class CrashHandler implements UncaughtExceptionHandler {
 //            android.os.Process.killProcess(android.os.Process.myPid());
 //            System.exit(1);
         ex.printStackTrace();
-            LogT.i("崩溃了:" );
+        LogT.i("崩溃了:");
         handleException(ex);
 //        }
 
-        if(mDefaultHandler !=null){
+        if (mDefaultHandler != null) {
             mDefaultHandler.uncaughtException(thread, ex);
         }
     }

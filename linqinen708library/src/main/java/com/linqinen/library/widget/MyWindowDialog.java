@@ -13,6 +13,7 @@ import com.linqinen.library.R;
 
 /**
  * Created by 林 on 2017/6/7.
+ * 以手机屏幕本身大小来判断的dialog
  */
 
 public class MyWindowDialog extends Dialog {

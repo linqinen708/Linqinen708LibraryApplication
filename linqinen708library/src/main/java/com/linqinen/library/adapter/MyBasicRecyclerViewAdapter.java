@@ -21,7 +21,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-
+/**曾经的RecyclerViewAdapter，没太大实际意义，基本上用BasicBindingAdapter3代替了*/
 public class MyBasicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 

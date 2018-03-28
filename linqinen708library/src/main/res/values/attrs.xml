@@ -9,7 +9,7 @@
         <attr name="isOpened" format="boolean"/>
     </declare-styleable>
 
-    <declare-styleable name="CircularRing">
+    <declare-styleable name="CircularRingPercentageView">
         <attr name="roundColor" format="color" />
         <attr name="roundProgressColor" format="color" />
         <attr name="circleRoundWidth" format="dimension" />
@@ -50,5 +50,10 @@
         <attr name="bgColor" format="color"/> <!--背景颜色-->
         <attr name="bitmap" format="reference"/> <!--小图片-->
     </declare-styleable>
+
+    <!--<declare-styleable name="MyDashboardView">-->
+
+    <!--</declare-styleable>-->
+
 
 </resources>

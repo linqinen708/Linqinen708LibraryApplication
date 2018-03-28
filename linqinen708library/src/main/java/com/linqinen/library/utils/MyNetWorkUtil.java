@@ -9,9 +9,46 @@ import java.util.List;
 
 /**
  * Created by 林 on 2017/5/18.
+ * 用来判断网络的状态
+ *
+ * 使用案例：@initWifi
+ *
  */
 
+
 public class MyNetWorkUtil {
+
+    private void initWifi(){
+//        if (MyNetWorkUtil.getAPNType(this) == MyNetWorkUtil.CURRENT_NETWORK_STATES_NO) {
+//            mIvWifi.setVisibility(View.GONE);
+//            new MyDialog(this)
+//                    .setTitle("网络设置提示")
+//                    .setMessage("当前网络不可用,是否进行设置?")
+//                    .setPositiveButton("设置网络", new MyDialog.OnMyDialogButtonClickListener() {
+//                        @Override
+//                        public void onClick() {
+//                            startActivity(new Intent().setAction("android.net.wifi.PICK_WIFI_NETWORK"));
+//                        }
+//                    }).setNegativeButton("退出", new MyDialog.OnMyDialogButtonClickListener() {
+//                @Override
+//                public void onClick() {
+//                    finish();
+//                }
+//            }).show();
+//        } else if (MyNetWorkUtil.getAPNType(this) != MyNetWorkUtil.CURRENT_NETWORK_STATES_WIFI) {
+//            mIvWifi.setVisibility(View.GONE);
+//            new MyDialog(this)
+//                    .setTitle("网络设置提示")
+//                    .setMessage("当前不是WiFi网路，是否继续使用慈硕养老？")
+//                    .setPositiveButton(null).setNegativeButton("退出", new MyDialog.OnMyDialogButtonClickListener() {
+//                @Override
+//                public void onClick() {
+//                    finish();
+//                }
+//            }).show();
+//        }
+    }
+
     //获取当前的网络状态
     public static final int CURRENT_NETWORK_STATES_NO = -1;//-1：没有网络
     public static final int CURRENT_NETWORK_STATES_WIFI = 1;//1：WIFI网络

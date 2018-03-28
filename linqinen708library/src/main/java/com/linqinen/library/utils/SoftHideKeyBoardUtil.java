@@ -9,6 +9,11 @@ import android.widget.FrameLayout;
 
 /**
  * 解决键盘档住输入框
+ *
+ * 适配全屏情况下，软键盘遮盖输入框的问题，效果很好，但是有动画重绘的副作用，先临时使用这种方法
+ * 使用案例：
+ * 在Activity中的onCreate方法中
+ * SoftHideKeyBoardUtil.assistActivity(this);
  */
 
 public class SoftHideKeyBoardUtil {

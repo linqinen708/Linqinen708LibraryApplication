@@ -14,6 +14,9 @@ import android.view.View;
 import com.linqinen.library.R;
 
 
+/**
+ * 这个应该是圆形百分比进度条的demo，估计和小米进度条很像
+ * */
 public class CircularRingPercentageView extends View {
     private Paint paint;
     private int circleWidth;
@@ -69,16 +72,16 @@ public class CircularRingPercentageView extends View {
 
     public CircularRingPercentageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.CircularRing);
-        maxColorNumber = mTypedArray.getInt(R.styleable.CircularRing_circleNumber, 40);
-        circleWidth = mTypedArray.getDimensionPixelOffset(R.styleable.CircularRing_circleWidth, getDpValue(180));
-        roundBackgroundColor = mTypedArray.getColor(R.styleable.CircularRing_roundColor, 0xffdddddd);
-        textColor = mTypedArray.getColor(R.styleable.CircularRing_circleTextColor, 0xff999999);
-        roundWidth = mTypedArray.getDimension(R.styleable.CircularRing_circleRoundWidth, 40);
-        textSize = mTypedArray.getDimension(R.styleable.CircularRing_circleTextSize, getDpValue(8));
-        colors[0] = mTypedArray.getColor(R.styleable.CircularRing_circleColor1, 0xffff4639);
-        colors[1] = mTypedArray.getColor(R.styleable.CircularRing_circleColor2, 0xffcdd513);
-        colors[2] = mTypedArray.getColor(R.styleable.CircularRing_circleColor3, 0xff3cdf5f);
+        TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.CircularRingPercentageView);
+        maxColorNumber = mTypedArray.getInt(R.styleable.CircularRingPercentageView_circleNumber, 40);
+        circleWidth = mTypedArray.getDimensionPixelOffset(R.styleable.CircularRingPercentageView_circleWidth, getDpValue(180));
+        roundBackgroundColor = mTypedArray.getColor(R.styleable.CircularRingPercentageView_roundColor, 0xffdddddd);
+        textColor = mTypedArray.getColor(R.styleable.CircularRingPercentageView_circleTextColor, 0xff999999);
+        roundWidth = mTypedArray.getDimension(R.styleable.CircularRingPercentageView_circleRoundWidth, 40);
+        textSize = mTypedArray.getDimension(R.styleable.CircularRingPercentageView_circleTextSize, getDpValue(8));
+        colors[0] = mTypedArray.getColor(R.styleable.CircularRingPercentageView_circleColor1, 0xffff4639);
+        colors[1] = mTypedArray.getColor(R.styleable.CircularRingPercentageView_circleColor2, 0xffcdd513);
+        colors[2] = mTypedArray.getColor(R.styleable.CircularRingPercentageView_circleColor3, 0xff3cdf5f);
         initView();
         mTypedArray.recycle();
     }
