@@ -1,13 +1,18 @@
 # library
 个人的library
-使用方式：
-<br/>dependencies {
-<br/>	        implementation 'com.github.linqinen708:library:1.0.4'
-<br/>	}
+<br/>使用方式：
 <br/>
-<br/>allprojects {
-<br/>		repositories {
-<br/>			...
-<br/>			maven { url 'https://www.jitpack.io' }
-<br/>		}
-<br/>	}
+<code>
+  dependencies {
+        implementation 'com.github.linqinen708:library:1.0.4'
+	}
+</code>
+
+<br/>
+<code>allprojects {
+		repositories {
+			...
+			maven { url 'https://www.jitpack.io' }
+		}
+	}
+</code>
