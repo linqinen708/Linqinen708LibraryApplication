@@ -5,7 +5,7 @@ import android.util.Log;
 
 public class LogT {
 
-    private static final String TAG = "qxy";//+LogT.class.getSimpleName()
+    private static final String TAG = "Ian";//+LogT.class.getSimpleName()
     /**
      * 日志输出等级
      */
