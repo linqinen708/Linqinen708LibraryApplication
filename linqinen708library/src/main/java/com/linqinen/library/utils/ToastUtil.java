@@ -1,75 +1,73 @@
-package com.wm.motor103.utils;
+package com.linqinen.library.utils;
 
 import android.content.Context;
 import android.widget.Toast;
 
 
 public class ToastUtil {
-    private static Toast sToast = null;
+    private static Toast mToast = null;
     private static Context mContext;
-    public static boolean isShow = true;
+    private static boolean isInit;
 
-
+    /**最好在Application中初始化*/
     public static void init(Context context) {
         if (context == null) {
             throw new IllegalArgumentException("You cannot start a load on a null Context");
         }
+        isInit = true;
         mContext = context;
     }
 
+    private static void isInitToast() {
+        if (!isInit) {
+            throw new IllegalArgumentException("You have not init toast");
+        }
+    }
+
     public static void showToast(String msg) {
-        if (!isShow) {
-            return;
-        }
-        if (sToast == null) {
-            sToast = Toast.makeText(mContext, msg, Toast.LENGTH_SHORT);
-        } else {
-            sToast.setText(msg);
-        }
-        sToast.show();
+        showToast(msg,Toast.LENGTH_SHORT);
     }
 
-    public static void showToast(int resId) {
-        if (!isShow) {
-            return;
-        }
-        if (sToast == null) {
-            sToast = Toast.makeText(mContext, resId, Toast.LENGTH_SHORT);
+    public static void showToast(String msg, int duration) {
+        isInitToast();
+        if (mToast == null) {
+            mToast = Toast.makeText(mContext, msg, duration);
         } else {
-            sToast.setText(resId);
+            if (mToast.getDuration() != duration) {
+                mToast.setDuration(duration);
+            }
+            mToast.setText(msg);
         }
-        sToast.show();
+        mToast.show();
     }
 
-    public static void showToastLong(String msg) {
-        if (!isShow) {
-            return;
-        }
-        if (sToast == null) {
-            sToast = Toast.makeText(mContext, msg, Toast.LENGTH_LONG);
-        } else {
-            sToast.setText(msg);
-        }
-        sToast.show();
+    public static void showToast(int resId){
+        showToast(resId,Toast.LENGTH_SHORT);
+
     }
 
-    public static void showToastLong(int resId) {
-        if (!isShow) {
-            return;
-        }
-        if (sToast == null) {
-            sToast = Toast.makeText(mContext, resId, Toast.LENGTH_LONG);
+    public static void showToast(int resId, int duration) {
+        isInitToast();
+        if (mToast == null) {
+            mToast = Toast.makeText(mContext, resId, duration);
         } else {
-            sToast.setText(resId);
+            if (mToast.getDuration() != duration) {
+                mToast.setDuration(duration);
+            }
+            mToast.setText(resId);
         }
-        sToast.show();
+        mToast.show();
     }
+
+
+
+
 
     // 主要针对需要在某个时候，取消提示
     public static void cancelToast() {
-        if (sToast != null) {
-            sToast.cancel();
-            sToast = null;
+        if (mToast != null) {
+            mToast.cancel();
+            mToast = null;
         }
     }
 
