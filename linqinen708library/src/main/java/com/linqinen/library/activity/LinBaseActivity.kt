@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Bundle
 import android.provider.Settings
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
@@ -67,4 +68,17 @@ abstract class LinBaseActivity: AppCompatActivity() {
                 }.setNegativeButton("取消", null)
                 .show()
     }
+
+    protected fun startActivity(clazz: Class<*>, bundle: Bundle?) {
+        val intent = Intent(this, clazz)
+        if (bundle != null) {
+            intent.putExtras(bundle)
+        }
+        startActivity(intent)
+    }
+    protected fun startActivity(clazz: Class<*>) {
+        startActivity(clazz,null)
+    }
+
+
 }

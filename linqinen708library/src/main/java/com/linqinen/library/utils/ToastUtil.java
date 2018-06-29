@@ -15,7 +15,7 @@ public class ToastUtil {
             throw new IllegalArgumentException("You cannot start a load on a null Context");
         }
         isInit = true;
-        mContext = context;
+        mContext = context.getApplicationContext();
     }
 
     private static void isInitToast() {
