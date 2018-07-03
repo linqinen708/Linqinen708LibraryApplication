@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //MVVM模式
+    dataBinding {
+        enabled = true
+    }
 }
 
 //这个是使用了Kotlin之后添加的
