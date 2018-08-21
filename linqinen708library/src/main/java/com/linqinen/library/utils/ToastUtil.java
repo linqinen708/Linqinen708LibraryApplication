@@ -20,7 +20,7 @@ public class ToastUtil {
 
     private static void isInitToast() {
         if (!isInit) {
-            throw new IllegalArgumentException("You have not init toast");
+            throw new IllegalArgumentException("You have not initialized toast");
         }
     }
 
