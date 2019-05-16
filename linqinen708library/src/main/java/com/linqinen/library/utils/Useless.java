@@ -67,3 +67,33 @@
 //        canvas.drawBitmap(bitmap, rect, rect, paint);
 //        return output;
 //    }
+
+//https://aleej.com/2018/07/15/%E8%A7%A3%E5%86%B3Android-Studio%E4%BE%9D%E8%B5%96%E5%BA%93%E7%89%88%E6%9C%AC%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/
+//版本不一致的时候，在gradle中配置以下方法
+//configurations.all {
+//        //循环每个依赖库
+//        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        //获取当前循环到的依赖库
+//        def requested = details.requested
+//        //如果这个依赖库群组的名字是com.android.support
+//        if (requested.group == 'com.android.support') {
+//        //且其名字不是以multidex开头的
+//        if (!requested.name.startsWith("multidex")) {
+//        //这里指定需要统一的依赖版本 比如我的需要配置成27.1.1
+//        details.useVersion '27.1.1'
+//        }
+//        }
+//        }
+//        }
+//相当于（不过不建议这么干，版本号修改后可能导致第三方库出现不兼容的问题）
+//configurations.all {
+//   resolutionStrategy {
+//       force 'com.android.support:support-fragment:26.1.0'
+//   }
+//}
+
+//https://segmentfault.com/a/1190000015805844
+// 或者在build.gradle 中添加下面节点
+//configuration{
+//        all*.exclude module: "support-fragment"
+//        }
