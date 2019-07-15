@@ -570,12 +570,10 @@ public class ImageManager {
             compressRatio = height / myHeight;
         }
         newOpts.inSampleSize = compressRatio;
-        if (is != null) {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         return BitmapFactory.decodeStream(is, null, newOpts);

@@ -6,20 +6,20 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * Created by 林 on 2017/10/20.
+ * Created by Ian on 2017/10/20.
  * 这个ViewPager是设置专门不让其滚动的
  * 原理就是onInterceptTouchEvent 返回false以及onTouchEvent 返回true 消费事件
  * http://www.jianshu.com/p/d3d766cf73d7
  */
 
-public class NoScrollViewPager extends ViewPager {
+public class UnableScrollViewPager extends ViewPager {
     private boolean isScroll;
 
-    public NoScrollViewPager(Context context) {
+    public UnableScrollViewPager(Context context) {
         super(context);
     }
 
-    public NoScrollViewPager(Context context, AttributeSet attrs) {
+    public UnableScrollViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
