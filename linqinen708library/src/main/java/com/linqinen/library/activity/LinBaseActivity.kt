@@ -18,11 +18,11 @@ abstract class LinBaseActivity: AppCompatActivity() {
     private var mToast: Toast? = null
 
     /**用来显示Toast信息*/
-    fun showToast(content: String) {
+    protected fun showToast(content: String) {
         showToast(content, Toast.LENGTH_SHORT)
     }
 
-    fun showToast(content: String, duration: Int) {
+    protected fun showToast(content: String, duration: Int) {
         if (mToast == null) {
             mToast = Toast.makeText(this, content, duration)
             mToast?.show()
