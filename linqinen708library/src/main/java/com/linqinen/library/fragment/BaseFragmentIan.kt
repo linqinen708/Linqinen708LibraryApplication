@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Build
 import android.support.annotation.NonNull
 import android.support.v4.app.Fragment
+import android.view.View
 import android.widget.Toast
 
 /**
@@ -65,5 +66,15 @@ abstract class BaseFragmentIan : Fragment() {
 
     private fun onAttachToContext(context: Context) {
         mContext = context
+    }
+
+    protected fun setViewVisible(@NonNull view: View){
+        view.visibility = View.VISIBLE
+    }
+    protected fun setViewInvisible(@NonNull view: View){
+        view.visibility = View.INVISIBLE
+    }
+    protected fun setViewGone(@NonNull view: View){
+        view.visibility = View.GONE
     }
 }

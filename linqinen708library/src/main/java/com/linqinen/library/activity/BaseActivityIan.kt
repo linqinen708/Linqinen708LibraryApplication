@@ -8,12 +8,13 @@ import android.os.Bundle
 import android.provider.Settings
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
 
 /**
  * Created by 林 on 2018/3/15.
  */
-abstract class LinBaseActivity: AppCompatActivity() {
+abstract class BaseActivityIan: AppCompatActivity() {
 
     private var mToast: Toast? = null
 
@@ -80,5 +81,14 @@ abstract class LinBaseActivity: AppCompatActivity() {
         startActivity(clazz,null)
     }
 
+    protected fun setViewVisible(view: View){
+        view.visibility = View.VISIBLE
+    }
+    protected fun setViewInvisible(view: View){
+        view.visibility = View.INVISIBLE
+    }
+    protected fun setViewGone(view: View){
+        view.visibility = View.GONE
+    }
 
 }
