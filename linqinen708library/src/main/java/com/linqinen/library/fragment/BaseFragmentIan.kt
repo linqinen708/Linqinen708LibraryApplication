@@ -13,7 +13,10 @@ import android.widget.Toast
  */
 abstract class BaseFragmentIan : Fragment() {
 
-    private var mToast: Toast? = null
+    companion object {
+
+        private var mToast: Toast? = null
+    }
 
     /**用来显示Toast信息*/
     protected fun showToast(content: String) {
@@ -21,11 +24,11 @@ abstract class BaseFragmentIan : Fragment() {
     }
 
     protected fun showToast(content: String, duration: Int) {
-        if (mContext == null){
+        if (mContext == null) {
             return
         }
         if (mToast == null) {
-            mToast = Toast.makeText(mContext, content, duration)
+            mToast = Toast.makeText(mContext!!.applicationContext, content, duration)
             mToast?.show()
         } else {
             mToast?.setText(content)
@@ -68,13 +71,15 @@ abstract class BaseFragmentIan : Fragment() {
         mContext = context
     }
 
-    protected fun setViewVisible(@NonNull view: View){
+    protected fun setViewVisible(@NonNull view: View) {
         view.visibility = View.VISIBLE
     }
-    protected fun setViewInvisible(@NonNull view: View){
+
+    protected fun setViewInvisible(@NonNull view: View) {
         view.visibility = View.INVISIBLE
     }
-    protected fun setViewGone(@NonNull view: View){
+
+    protected fun setViewGone(@NonNull view: View) {
         view.visibility = View.GONE
     }
 }

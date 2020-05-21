@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    <com.linqinen.library.widget.MyCheckedTextView-->
+<!--        android:id="@+id/background"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:mtv_solid_color="@android:color/white"-->
+<!--        app:mtv_radius="5dp"-->
+<!--         />-->
+
+    <com.linqinen.library.widget.MyCheckedTextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mtv_solid_color="@android:color/white"
+        app:mtv_radius_left_top="5dp"
+        app:mtv_radius_right_top="5dp"
+        tools:text="温馨提示" />
+
+
+    
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintBottom_toTopOf="@+id/mctv_negative_button"
+        tools:text="你确定要退出APP吗？" />
+
+    <com.linqinen.library.widget.MyCheckedTextView
+        android:id="@+id/mctv_negative_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="取消"
+        app:layout_constraintEnd_toStartOf="@+id/mctv_positive_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_message"
+        app:mtv_pressed_solid_color="@color/gray_f1f2f4"
+        app:mtv_radius_left_bottom="5dp"
+        app:mtv_solid_color="@android:color/white"
+        />
+
+    <com.linqinen.library.widget.MyCheckedTextView
+        android:id="@+id/mctv_positive_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="确定"
+        android:textColor="@color/blue_0099ff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mctv_negative_button"
+        app:layout_constraintTop_toTopOf="@+id/mctv_negative_button"
+        app:mtv_pressed_solid_color="@color/gray_f1f2f4"
+        app:mtv_radius_right_bottom="5dp"
+        app:mtv_solid_color="@android:color/white"
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_f1f2f4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_f1f2f4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_message"
+        />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/gray_f1f2f4"
+        app:layout_constraintTop_toTopOf="@+id/mctv_positive_button"
+        app:layout_constraintBottom_toBottomOf="@+id/mctv_positive_button"
+        app:layout_constraintEnd_toStartOf="@+id/mctv_positive_button"
+        />
+</android.support.constraint.ConstraintLayout>
